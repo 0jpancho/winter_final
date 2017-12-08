@@ -20,20 +20,31 @@ function ChargingDock(){
     };
 
     this.unplug = function(dvcIdx){
-        //type in here
+        if (!(this.leds[dvcIdx] == "red")){
+            let temp;
+            this.ports[dvcIdx] = temp;
+            this.ports[dvcIdx] = undefined;
+            this.leds[dvcIdx] = "red";
+
+            return temp;
+        }
     };
 
     this.chargeAll = function(min){
-        //type in here
+        for (let i = 0; i < this.leds; i++) {
+            if (!(this.leds[i] == "red")) {
+                this.ports[i].charge(min);
+            }
+            if (dvc.juice > 0.99) {
+                this.leds[i] = "green"
+            }
+        }
     };
-
-
 }
 
 //defines the testing code
 function main(){
     let otherShit = new ChargingDock();
-    ChargingDock.
 }
 
 //runs the main code
