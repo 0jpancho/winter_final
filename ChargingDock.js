@@ -22,7 +22,7 @@ function ChargingDock(){
     this.unplug = function(dvcIdx){
         if (!(this.leds[dvcIdx] == "red")){
             let temp;
-            this.ports[dvcIdx] = temp;
+            temp = this.ports[dvcIdx];
             this.ports[dvcIdx] = undefined;
             this.leds[dvcIdx] = "red";
 
@@ -37,6 +37,9 @@ function ChargingDock(){
             }
             if (dvc.juice > 0.99) {
                 this.leds[i] = "green"
+                if (dvc.juice > 0.99) {
+                    dvc.juice = 1;
+                }
             }
         }
     };
