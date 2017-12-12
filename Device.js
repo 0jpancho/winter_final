@@ -87,14 +87,15 @@ function Device(t,ma,c){
 //defines the testing code.
 function main(){
   let shitStuffs = new Device("Moar Shit", 1500, 5000);
+  let otherShitStuffs = new Device("Moar Shit", 2000, 6000);
   shitStuffs.on();
   //shitStuffs.off();
   console.log(shitStuffs.state);
   console.log(shitStuffs.power());
   shitStuffs.charge(120)
   console.log(shitStuffs.power());
-  shitStuffs.use(30)
-  console.log(shitStuffs.power());
+  //shitStuffs.use(30)
+ // console.log(shitStuffs.power());
 }
 //runs the testing code.
 main();

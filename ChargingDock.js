@@ -1,4 +1,5 @@
 //defines how all charging stations work.
+const Device = require("./Device.js");
 function ChargingDock(){
 
 //Instance variables
@@ -13,8 +14,9 @@ function ChargingDock(){
                 this.ports[i]=dvc;
                 this.leds[i]="yellow";
                 if (dvc.juice >0.99) {
-                    this.leds[i]="green"
+                    this.leds[i]="green";
                 }
+                return this.ports[i];
             }
         }
     };
@@ -34,13 +36,15 @@ function ChargingDock(){
         for (let i = 0; i < this.leds; i++) {
             if (!(this.leds[i] == "red")) {
                 this.ports[i].charge(min);
-            }
-            if (dvc.juice > 0.99) {
-                this.leds[i] = "green"
+
                 if (dvc.juice > 0.99) {
-                    dvc.juice = 1;
+                    this.leds[i] = "green";
+                    if (dvc.juice > 0.99) {
+                        dvc.juice = 1;
+                    }
                 }
             }
+
         }
     };
 }
@@ -48,6 +52,11 @@ function ChargingDock(){
 //defines the testing code
 function main(){
     let otherShit = new ChargingDock();
+    otherShit.plug("shitStuffs");
+    otherShit.plug("otherShitStuffs")
+    console.log(otherShit);
+    otherShit.chargeAll(200);
+    console.log(otherShit);
 }
 
 //runs the main code
