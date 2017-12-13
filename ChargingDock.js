@@ -51,11 +51,16 @@ function ChargingDock(){
 
 //defines the testing code
 function main(){
+     let shitStuffs = new Device("Moar Shit", 1500, 5000);
     let otherShit = new ChargingDock();
-    otherShit.plug("shitStuffs");
-    otherShit.plug("otherShitStuffs")
+    let otherShitStuffs = new Device("Moar", 2000, 6000);
+    otherShit.plug(shitStuffs);
+    otherShit.plug(otherShitStuffs);
     console.log(otherShit);
-    otherShit.chargeAll(200);
+    otherShit.chargeAll(2000);
+    //console.log(otherShit);
+    //console.log(shitStuffs);
+    otherShit.unplug(shitStuffs);
     console.log(otherShit);
 }
 
