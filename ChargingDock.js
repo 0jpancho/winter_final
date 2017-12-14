@@ -33,34 +33,32 @@ function ChargingDock(){
     };
 
     this.chargeAll = function(min){
-        for (let i = 0; i < this.leds; i++) {
+        for (let i = 0; i < this.leds.length; i++) {
             if (!(this.leds[i] == "red")) {
                 this.ports[i].charge(min);
 
-                if (dvc.juice > 0.99) {
+                if (this.ports[i].juice >= 0.99) {
                     this.leds[i] = "green";
-                    if (dvc.juice > 0.99) {
-                        dvc.juice = 1;
-                    }
+                    this.ports[i].juice = 1;
                 }
-            }
 
+            }
         }
     };
 }
 
 //defines the testing code
 function main(){
-     let shitStuffs = new Device("Moar Shit", 1500, 5000);
+    let shitStuffs = new Device("Moar Shit", 1500, 5000);
     let otherShit = new ChargingDock();
     let otherShitStuffs = new Device("Moar", 2000, 6000);
+    shitStuffs.use(100);
     otherShit.plug(shitStuffs);
     otherShit.plug(otherShitStuffs);
-    console.log(otherShit);
-    otherShit.chargeAll(2000);
     //console.log(otherShit);
-    //console.log(shitStuffs);
-    otherShit.unplug(shitStuffs);
+    //otherShit.unplug(1);
+    console.log(otherShit);
+    otherShit.chargeAll(1000);
     console.log(otherShit);
 }
 

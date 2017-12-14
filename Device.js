@@ -92,10 +92,10 @@ function main(){
   //shitStuffs.off();
   console.log(shitStuffs.state);
   console.log(shitStuffs.power());
-  shitStuffs.charge(120)
+  //shitStuffs.charge(120)
   console.log(shitStuffs.power());
-  //shitStuffs.use(30)
- // console.log(shitStuffs.power());
+  shitStuffs.use(300)
+  console.log(shitStuffs.power());
 }
 //runs the testing code.
 main();
