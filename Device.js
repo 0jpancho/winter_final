@@ -86,16 +86,14 @@ function Device(t,ma,c){
 
 //defines the testing code.
 function main(){
-  let shitStuffs = new Device("Moar Shit", 1500, 5000);
-  let otherShitStuffs = new Device("Moar", 2000, 6000);
-  shitStuffs.on();
-  //shitStuffs.off();
-  console.log(shitStuffs.state);
-  console.log(shitStuffs.power());
-  //shitStuffs.charge(120)
-  console.log(shitStuffs.power());
-  shitStuffs.use(300)
-  console.log(shitStuffs.power());
+  let siberian = new Device("Moar tiger", 1500, 5000);
+  let bengal = new Device("Moar", 2000, 6000);
+  bengal.on();
+  console.log(bengal.state);
+  console.log(bengal.power());
+  console.log(siberian.power());
+  siberian.use(300)
+  console.log(siberian.power());
 }
 //runs the testing code.
 main();

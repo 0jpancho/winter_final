@@ -49,17 +49,16 @@ function ChargingDock(){
 
 //defines the testing code
 function main(){
-    let shitStuffs = new Device("Moar Shit", 1500, 5000);
-    let otherShit = new ChargingDock();
-    let otherShitStuffs = new Device("Moar", 2000, 6000);
-    shitStuffs.use(100);
-    otherShit.plug(shitStuffs);
-    otherShit.plug(otherShitStuffs);
-    //console.log(otherShit);
-    //otherShit.unplug(1);
-    console.log(otherShit);
-    otherShit.chargeAll(1000);
-    console.log(otherShit);
+    let map = new Device("Moar Turts", 1500, 5000);
+    let painted = new Device("Moar Ts", 2000, 6000);
+    let turtleDock = new ChargingDock();
+
+    otherShit.plug(map);
+    otherShit.plug(painted);
+    console.log(turtleDock);
+    otherShit.unplug(0);
+    otherShit.unplug(1);
+    console.log(turtleDock);
 }
 
 //runs the main code
